@@ -9,7 +9,7 @@ import "unsafe"
 type Slice struct {
 	data  *C.char
 	size  C.size_t
-	freed bool
+	Freed bool
 }
 
 type Slices []*Slice
@@ -50,9 +50,9 @@ func (s *Slice) Exists() bool {
 
 // Free frees the slice data.
 func (s *Slice) Free() {
-	if !s.freed {
+	if !s.Freed {
 		C.rocksdb_free(unsafe.Pointer(s.data))
-		s.freed = true
+		s.Freed = true
 	}
 }
 
