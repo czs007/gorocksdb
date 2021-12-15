@@ -1,3 +1,3 @@
-module github.com/czs/gorocksdb/v7.0
+module github.com/czs/gorocksdb
 
 go 1.15
